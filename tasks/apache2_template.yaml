@@ -1,7 +1,7 @@
 ---
 - name: Write directory-based nextcloud.conf file
   ansible.builtin.template:
-    src: templates/dhcpd.conf.j2
+    src: dhcpd.conf.j2
     dest: "{{ nextcloud_apache2_config_path }}"
     mode: '0644'
   become: true
@@ -11,7 +11,7 @@
 
 - name: Write virtualhost nextcloud.conf file
   ansible.builtin.template:
-    src: templates/apache2_virtualhost_nextcloud.conf.j2
+    src: apache2_virtualhost_nextcloud.conf.j2
     dest: "{{ nextcloud_apache2_config_path }}"
     mode: '0644'
   become: true
