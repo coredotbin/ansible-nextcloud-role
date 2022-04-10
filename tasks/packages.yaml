@@ -20,14 +20,14 @@
   ansible.builtin.package:
     name: "{{ item }}"
     state: present
-    with_items:
-      - php-fpm
-      - php-curl
-      - php-xml
-      - php-gd
-      - php-mbstring
-      - php-zip
-      - php-mysql
-      - php-pgsql
-      - php-bz2
-      - php-redis
+  with_items:
+    - php-fpm
+    - php-curl
+    - php-xml
+    - php-gd
+    - php-mbstring
+    - php-zip
+    - php-mysql
+    - php-pgsql
+    - php-bz2
+    - php-redis
