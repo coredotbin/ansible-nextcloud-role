@@ -1,4 +1,7 @@
 ---
+- name: Install packages
+  include_tasks: packages.yaml
+
 - name: Create Apache2 config
   include_tasks: apache2_template.yaml
   when: not nextcloud_nginx

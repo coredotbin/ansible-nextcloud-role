@@ -1,0 +1,33 @@
+---
+- name: Ensure Apache2 package is installed
+  ansible.builtin.package:
+    name: apache2
+    state: present
+  when: not nextcloud_nginx
+
+- name: Ensure nginx package is installed
+  ansible.builtin.package:
+    name: nginx
+    state: present
+  when: nextcloud_nginx
+
+- name: Ensure PHP package is installed
+  ansible.builtin.package:
+    name: php
+    state: present
+
+- name: Ensure PHP module packages are installed
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+    with_items:
+      - php-fpm
+      - php-curl
+      - php-xml
+      - php-gd
+      - php-mbstring
+      - php-zip
+      - php-mysql
+      - php-pgsql
+      - php-bz2
+      - php-redis
