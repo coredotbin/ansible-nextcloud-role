@@ -2,6 +2,8 @@
 
 [![Ansible Lint](https://github.com/coredotbin/ansible-nextcloud-role/actions/workflows/ansible_lint.yaml/badge.svg)](https://github.com/coredotbin/ansible-nextcloud-role/actions/workflows/ansible_lint.yaml)
 
+**Note:** This is **heavily a WIP** - Please do not expect this to work for you at this time.
+
 This role configures a web server on your host for Nextcloud
 
 ## Role configuration
