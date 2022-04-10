@@ -1,0 +1,13 @@
+# {{ ansible_managed }}
+
+Alias /nextcloud "{{ nextcloud_www_path }}"
+
+<Directory {{ nextcloud_www_path }}>
+  Require all granted
+  AllowOverride All
+  Options FollowSymLinks MultiViews
+
+  <IfModule mod_dav.c>
+    Dav off
+  </IfModule>
+</Directory>

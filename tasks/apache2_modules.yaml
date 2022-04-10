@@ -1,0 +1,25 @@
+---
+- name: Enable mod_rewrite
+  community.general.apache2_module:
+    name: rewrite
+    state: present
+
+- name: Enable mod_headers
+  community.general.apache2_module:
+    name: headers
+    state: present
+
+- name: Enable mod_env
+  community.general.apache2_module:
+    name: env
+    state: present
+
+- name: Enable mod_dir
+  community.general.apache2_module:
+    name: dir
+    state: present
+
+- name: Enable mod_mime
+  community.general.apache2_module:
+    name: mime
+    state: present

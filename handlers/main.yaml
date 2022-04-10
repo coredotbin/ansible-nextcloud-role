@@ -1,0 +1,13 @@
+---
+- name: Enable Nextcloud site
+  ansible.builtin.shell: a2ensite nextcloud.conf
+
+- name: Restart Apache
+  ansible.builtin.systemd:
+    name: httpd
+    state: restarted
+
+- name: Restart nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted

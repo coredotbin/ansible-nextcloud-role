@@ -1,0 +1,29 @@
+---
+
+# Your domain name for web server configuration
+domain_name: ''
+
+# The subdomain at which you'd like Nextcloud to be accessible at
+nextcloud_subdomain: "{{ ansible_hostname }}"
+
+nextcloud_www_path: '/var/www/nextcloud/'
+
+nextcloud_ssl: false
+
+# Apache configuration
+
+# Configure with virtualhost rather than directory-based Apache site
+nextcloud_apache2_virtualhost: false
+
+# If using mod_fcgi rather than the standard mod_php, we should also enable mod_setenvif
+nextcloud_apache2_fcgi: false
+
+nextcloud_apache2_config_path: '/etc/apache2/sites-available/nextcloud.conf'
+
+# nginx configuration
+
+# Configure with nginx rather than Apache
+nextcloud_nginx: false
+nextcloud_config_path: "/etc/nginx/nginx.conf"
+nextcloud_nginx_ssl_certificate_path: "/etc/ssl/nginx/{{ nextcloud_subdomain }}.{{ domain_name }}.crt"
+nextcloud_nginx_ssl_key_path: "/etc/ssl/nginx/{{ nextcloud_subdomain }}.{{ domain_name }}.key"
