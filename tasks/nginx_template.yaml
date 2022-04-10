@@ -1,11 +1,7 @@
 ---
 - name: Write nginx.conf file
   ansible.builtin.template:
-<<<<<<< HEAD
     src: nginx.conf
-=======
-    src: nginx.conf.j2
->>>>>>> 46b6f98 (Fixed template paths)
     dest: "{{ nextcloud_nginx_config_path }}"
     mode: '0644'
   become: true
