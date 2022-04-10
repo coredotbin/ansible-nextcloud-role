@@ -1,6 +1,6 @@
 ---
 - name: Enable Nextcloud site
-  ansible.builtin.shell: a2ensite nextcloud.conf
+  ansible.builtin.command: a2ensite nextcloud.conf
 
 - name: Restart Apache
   ansible.builtin.systemd:
