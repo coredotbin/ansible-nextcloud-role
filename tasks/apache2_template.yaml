@@ -6,6 +6,8 @@
     mode: '0644'
   become: true
   when: not nextcloud_apache2_virtualhost
+  notify:
+    - Enable Nextcloud site
 
 - name: Write virtualhost nextcloud.conf file
   ansible.builtin.template:
@@ -14,3 +16,5 @@
     mode: '0644'
   become: true
   when: nextcloud_apache2_virtualhost
+  notify:
+    - Enable Nextcloud site

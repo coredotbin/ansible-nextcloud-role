@@ -5,3 +5,5 @@
     dest: "{{ nextcloud_nginx_config_path }}"
     mode: '0644'
   become: true
+  notify:
+    - Restart nginx

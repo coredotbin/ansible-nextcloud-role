@@ -2,20 +2,14 @@
 - name: Create Apache2 config
   include_tasks: apache2_template.yaml
   when: not nextcloud_nginx
-  notify:
-    - Enable Nextcloud site
 
 - name: Enable Apache2 modules
   include_tasks: apache2_modules.yaml
   when: not nextcloud_nginx
-  notify:
-    - Restart Apache
 
 - name: Create nginx config
   include_tasks: nginx_template.yaml
   when: nextcloud_nginx
-  notify:
-    - Restart nginx
 
 - name: Change ownership of Nextcloud directories
   ansible.builtin.file:
