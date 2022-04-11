@@ -5,10 +5,22 @@
     state: present
   when: not nextcloud_nginx
 
+- name: Remove nginx package
+  ansible.builtin.package:
+    name: nginx
+    state: absent
+  when: not nextcloud_nginx
+
 - name: Ensure nginx package is installed
   ansible.builtin.package:
     name: nginx
     state: present
+  when: nextcloud_nginx
+
+- name: Remove Apache2 package
+  ansible.builtin.package:
+    name: apache2
+    state: absent
   when: nextcloud_nginx
 
 - name: Ensure PHP package is installed
