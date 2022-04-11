@@ -31,8 +31,8 @@ server {
 
     # Use Mozilla's guidelines for SSL/TLS settings
     # https://mozilla.github.io/server-side-tls/ssl-config-generator/
-    ssl_certificate     {{ nextcloud_nginx_ssl_certificate_path }};
-    ssl_certificate_key {{ nextclodu_nginx_ssl_key_path }};
+    ssl_certificate     {{ nextcloud_ssl_certificate_path }};
+    ssl_certificate_key {{ nextcloud_ssl_key_path }};
 
     # HSTS settings
     # WARNING: Only add the preload option once you read about
