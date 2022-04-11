@@ -10,6 +10,10 @@
   include_tasks: apache2_modules.yaml
   when: not nextcloud_nginx
 
+- name: Enable Apache2 site
+  include_tasks: apache2_site.yaml
+  when: not nextcloud_nginx
+
 - name: Create nginx config
   include_tasks: nginx_template.yaml
   when: nextcloud_nginx
