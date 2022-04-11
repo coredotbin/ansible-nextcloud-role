@@ -1,7 +1,7 @@
 ---
 - name: Enable Apache2 modules
   community.general.apache2_module:
-    name: rewrite
+    name: "{{ item }}"
     state: present
   with_items:
     - alias
@@ -13,3 +13,9 @@
     - mime
   notify:
     - Restart Apache
+
+- name: Enable Apache2 module SSL
+  community.general.apache2_module:
+    name: ssl
+    state: present
+  when: nextcloud_ssl
