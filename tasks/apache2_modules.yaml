@@ -4,6 +4,8 @@
     name: rewrite
     state: present
   with_items:
+    - alias
+    - proxy
     - rewrite
     - headers
     - env
