@@ -14,9 +14,5 @@
   include_tasks: nginx_template.yaml
   when: nextcloud_nginx
 
-- name: Change ownership of Nextcloud directories
-  ansible.builtin.file:
-    path: "{{ nextcloud_www_path }}"
-    owner: www-data
-    group: www-data
-    recurse: true
+- name: Install Nextcloud files
+  include_tasks: install_nextcloud.yaml

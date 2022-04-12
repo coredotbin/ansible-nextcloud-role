@@ -3,6 +3,9 @@
 # Your domain name for web server configuration
 domain_name: 'localdomain'
 
+# The major version of Nextcloud to install
+nextcloud_version: 23
+
 # The subdomain at which you'd like Nextcloud to be accessible at
 nextcloud_subdomain: nextcloud
 
