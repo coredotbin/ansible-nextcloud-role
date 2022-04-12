@@ -14,9 +14,6 @@ nextcloud_ssl_key_path: "/etc/ssl/nginx/{{ nextcloud_subdomain }}.{{ domain_name
 
 # Apache configuration
 
-# Configure with virtualhost rather than directory-based Apache site
-nextcloud_apache2_virtualhost: false
-
 # If using mod_fcgi rather than the standard mod_php, we should also enable mod_setenvif
 nextcloud_apache2_fcgi: false
 
