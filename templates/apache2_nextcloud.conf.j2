@@ -1,16 +1,18 @@
 # {{ ansible_managed }}
 
 <VirtualHost *:80>
-  DocumentRoot {{ nextcloud_www_path }}
-  ServerName {{ ansible_hostname }}.{{ domain_name }}
-
-  <Directory {{ nextcloud_www_path }}>
-    Require all granted
-    AllowOverride All
-    Options FollowSymLinks MultiViews
-
-    <IfModule mod_dav.c>
-      Dav off
-    </IfModule>
-  </Directory>
+	DocumentRoot {{ nextcloud_www_path }}
+	ServerName {{ ansible_hostname }}.{{ domain_name }}
+	
+	<Directory {{ nextcloud_www_path }}>
+		Require all granted
+		AllowOverride All
+		Options FollowSymLinks MultiViews
+		
+		<IfModule mod_dav.c>
+			Dav off
+		</IfModule>
+	</Directory>
 </VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
