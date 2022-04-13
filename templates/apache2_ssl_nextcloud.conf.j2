@@ -1,0 +1,32 @@
+# {{ ansible_managed }}
+
+<IfModule mod_ssl.c>
+	<VirtualHost *:443>
+	 	ServerName {{ ansible_hostname }}.{{ domain_name }}
+
+		DocumentRoot {{ nextcloud_www_path }}
+
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+		SSLEngine on
+		SSLCertificateFile {{ nextcloud_ssl_certificate_path }}
+		SSLCertificateKeyFile {{ nextcloud_ssl_key_path }}
+	
+	 	<Directory {{ nextcloud_www_path }}>
+	 		Require all granted
+	 		AllowOverride All
+	 		Options FollowSymLinks MultiViews
+	
+	 		<IfModule mod_dav.c>
+	 			Dav off
+	 		</IfModule>
+	 	</Directory>
+		
+		<FilesMatch "\.php$">
+			SSLOptions +StdEnvVars
+		</FilesMatch>
+	</VirtualHost>
+</IfModule>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet

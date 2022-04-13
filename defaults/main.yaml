@@ -11,9 +11,9 @@ nextcloud_subdomain: nextcloud
 
 nextcloud_www_path: '/var/www/nextcloud/'
 
-nextcloud_ssl: false
-nextcloud_ssl_certificate_path: "/etc/ssl/nginx/{{ nextcloud_subdomain }}.{{ domain_name }}.crt"
-nextcloud_ssl_key_path: "/etc/ssl/nginx/{{ nextcloud_subdomain }}.{{ domain_name }}.key"
+nextcloud_ssl: true
+nextcloud_ssl_certificate_path: "/etc/ssl/certs/ssl-cert-snakeoil.pem"
+nextcloud_ssl_key_path: "/etc/ssl/private/ssl-cert-snakeoil.key"
 
 # Apache configuration
 
