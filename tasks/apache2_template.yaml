@@ -1,9 +1,19 @@
 ---
+- name: Write Apache2 SSL nextcloud.conf file
+  ansible.builtin.template:
+    src: apache2_ssl_nextcloud.conf.j2
+    dest: "{{ nextcloud_apache2_config_path }}"
+    mode: '0644'
+  become: true
+  when: nextcloud_ssl
+  notify: Enable Nextcloud site
+
 - name: Write Apache2 nextcloud.conf file
   ansible.builtin.template:
     src: apache2_nextcloud.conf.j2
     dest: "{{ nextcloud_apache2_config_path }}"
     mode: '0644'
   become: true
+  when: not nextcloud_ssl
   notify:
     - Enable Nextcloud site
