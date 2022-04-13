@@ -3,9 +3,9 @@
   ansible.builtin.unarchive:
     src: "https://download.nextcloud.com/server/releases/latest-{{ nextcloud_version }}.tar.bz2"
     dest: "{{ nextcloud_www_path }}"
-  extra_opts:
-    - --transform
-    - s/^nextcloud\///
+    extra_opts:
+      - --transform
+      - s/^nextcloud\///
 
 - name: Change ownership of Nextcloud directories
   ansible.builtin.file:
