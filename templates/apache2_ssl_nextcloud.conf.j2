@@ -1,8 +1,13 @@
 # {{ ansible_managed }}
 
 <IfModule mod_ssl.c>
+	<VirtualHost *:80>
+		ServerName {{ nextcloud_subdomain }}.{{ domain_name }}
+		Redirect permanent / https://{{ nextcloud_subdomain }}.{{ domain_name }}/
+	</VirtualHost>
+
 	<VirtualHost *:443>
-	 	ServerName {{ ansible_hostname }}.{{ domain_name }}
+	 	ServerName {{ nextcloud_subdomain }}.{{ domain_name }}
 
 		DocumentRoot {{ nextcloud_www_path }}
 
