@@ -31,6 +31,12 @@
 		<FilesMatch "\.php$">
 			SSLOptions +StdEnvVars
 		</FilesMatch>
+
+{% if nextcloud_hsts %}
+		<IfModule mod_headers.c>
+			Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains{% if nextcloud_hsts_preload %}; preload{% endif %}"
+		</IfModule>
+{% endif %}
 	</VirtualHost>
 </IfModule>
 

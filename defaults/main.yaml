@@ -14,6 +14,8 @@ nextcloud_www_path: '/var/www/nextcloud/'
 nextcloud_ssl: true
 nextcloud_ssl_certificate_path: "/etc/ssl/certs/ssl-cert-snakeoil.pem"
 nextcloud_ssl_key_path: "/etc/ssl/private/ssl-cert-snakeoil.key"
+nextcloud_hsts: true
+nextcloud_hsts_preload: false
 
 # Apache configuration
 
