@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: nextcloud
   author: Corbin Bartsch
   description: Configure a Debian host for Nextcloud installation
   license: MIT
