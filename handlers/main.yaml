@@ -8,3 +8,9 @@
   ansible.builtin.systemd:
     name: nginx
     state: restarted
+
+- name: Enable Nextcloud site
+  ansible.builtin.file:
+    src: "{{ nextcloud_apache2_config_path }}"
+    dest: /etc/apache2/sites-enabled/nextcloud.conf
+    state: link
