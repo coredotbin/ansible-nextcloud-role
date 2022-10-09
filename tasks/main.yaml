@@ -1,19 +1,19 @@
 ---
 - name: Install packages
-  include_tasks: packages.yaml
+  ansible.builtin.include_tasks: packages.yaml
 
 - name: Enable Apache2 modules
-  include_tasks: apache2_modules.yaml
+  ansible.builtin.include_tasks: apache2_modules.yaml
   when: not nextcloud_nginx
 
 - name: Create Apache2 config
-  include_tasks: apache2_template.yaml
+  ansible.builtin.include_tasks: apache2_template.yaml
   when: not nextcloud_nginx
   notify: Enable Apache Nextcloud site
 
 - name: Create nginx config
-  include_tasks: nginx_template.yaml
+  ansible.builtin.include_tasks: nginx_template.yaml
   when: nextcloud_nginx
 
 - name: Install Nextcloud files
-  include_tasks: install_nextcloud.yaml
+  ansible.builtin.include_tasks: install_nextcloud.yaml

@@ -4,5 +4,6 @@ extends: default
 
 ignore: |
   .github/
+  meta/
 
 # vi: ft=yaml
