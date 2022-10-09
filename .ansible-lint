@@ -1,0 +1,9 @@
+---
+
+exclude_paths:
+  - .github/
+
+warn_list:
+  - internal-error
+
+# vi: ft=yaml

@@ -1,7 +1,8 @@
 ---
 - name: Download latest Nextcloud {{ nextcloud_version }} tar.bz2 archive
   ansible.builtin.unarchive:
-    src: "https://download.nextcloud.com/server/releases/latest-{{ nextcloud_version }}.tar.bz2"
+    src: "https://download.nextcloud.com/server/releases\
+          /latest-{{ nextcloud_version }}.tar.bz2"
     dest: "{{ nextcloud_www_path }}"
     extra_opts:
       - --transform

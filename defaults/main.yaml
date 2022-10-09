@@ -19,7 +19,8 @@ nextcloud_hsts_preload: false
 
 # Apache configuration
 
-# If using mod_fcgi rather than the standard mod_php, we should also enable mod_setenvif
+# If using mod_fcgi rather than the standard mod_php,
+# we should also enable mod_setenvif
 nextcloud_apache2_fcgi: false
 
 nextcloud_apache2_config_path: '/etc/apache2/sites-available/nextcloud.conf'
