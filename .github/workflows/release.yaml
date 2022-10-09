@@ -15,6 +15,13 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
+      # Wait for a successful conclusion from the Lint workflow
+      # before running the import
+      - name: Wait for workflow
+        uses: ArcticLampyrid/action-wait-for-workflow@v1.0.2
+        with:
+          workflow: Lint
+
       - name: Set up Python 3
         uses: actions/setup-python@v2
         with:
