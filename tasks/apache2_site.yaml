@@ -1,4 +1,0 @@
----
-- name: Enable Nextcloud site
-  ansible.builtin.command: a2ensite nextcloud.conf
-  when: not nextcloud_nginx and not nextcloud_ssl

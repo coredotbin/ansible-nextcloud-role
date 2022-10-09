@@ -9,8 +9,8 @@
     name: nginx
     state: restarted
 
-- name: Enable Nextcloud site
-  ansible.builtin.file:
-    src: "{{ nextcloud_apache2_config_path }}"
-    dest: /etc/apache2/sites-enabled/nextcloud.conf
-    state: link
+- name: Enable Apache Nextcloud site
+  ansible.builtin.command: a2ensite nextcloud.conf
+
+- name: Disable Apache Nextcloud site
+  ansible.builtin.command: a2dissite nextcloud.conf

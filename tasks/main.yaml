@@ -2,17 +2,14 @@
 - name: Install packages
   include_tasks: packages.yaml
 
-- name: Create Apache2 config
-  include_tasks: apache2_template.yaml
-  when: not nextcloud_nginx
-
 - name: Enable Apache2 modules
   include_tasks: apache2_modules.yaml
   when: not nextcloud_nginx
 
-- name: Enable Apache2 site
-  include_tasks: apache2_site.yaml
+- name: Create Apache2 config
+  include_tasks: apache2_template.yaml
   when: not nextcloud_nginx
+  notify: Enable Apache Nextcloud site
 
 - name: Create nginx config
   include_tasks: nginx_template.yaml
