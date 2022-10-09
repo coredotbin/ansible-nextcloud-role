@@ -9,7 +9,6 @@
 - name: Create Apache2 config
   ansible.builtin.include_tasks: apache2_template.yaml
   when: not nextcloud_nginx
-  notify: Enable Apache Nextcloud site
 
 - name: Create nginx config
   ansible.builtin.include_tasks: nginx_template.yaml
